@@ -31,6 +31,7 @@ SenhasChamadas* inicializaSenhasChamadas(){
 
 
 void gerarSenha(Senha **senha, int qtdNormal, int qtdPrioridade, int prioridade){
+	sleep(1);
 	Senha* s = (Senha*) malloc(sizeof(Senha)); //pontiero para guardar uma senha, alocando menemoria do tamano de uma strutura senha e convertendo para a senha
 	s->id =  (qtdNormal + qtdPrioridade)+1; // atribuindo um id para a senha, ela é a soma de todas as senhas +1 pois a primeiro seria 0 caso não tivesse isso
 	s->prioridade = prioridade; //atribuindo a prioridade a senha
@@ -40,7 +41,7 @@ void gerarSenha(Senha **senha, int qtdNormal, int qtdPrioridade, int prioridade)
 		s->senha = ++qtdNormal; // a senha é a próximo número da seguência de senhas normais
 	}
 	s->next = NULL; // esse ponteiro deve apontar para o NULL pois ele deve ser adicionado em ultimo lugar na fila
-	printf("SENHA: %s %s\nTIPO: %s\n", s->prioridade ? " P" : " N", s->senha, s->prioridade ? " PRIORITARIA" : " NORMAL");
+	printf("\nSENHA: %s%d\nTIPO: %s\n", s->prioridade ? " P" : " N", s->senha, s->prioridade ? " PRIORITARIA" : " NORMAL");
 	if(*senha == NULL){ // se a fila for vazia
 		*senha = s; // ele adiciona ela no inicio
 	}else{ // se não
