@@ -1,5 +1,6 @@
 #ifndef MENUS_H_INCLUDED
 #define MENUS_H_INCLUDED
+#include "gerador.h"
 
 void SelecionarMenuPrincipal(){
     int Opcao;
@@ -43,6 +44,11 @@ void SelecionarMenuPrincipal(){
 
 void MenuGsenha(){
     int Opcao;
+    Senha* senhas = inicializaSenha(); 
+	SenhasChamadas* senhasChamadas = inicializaSenhasChamadas();
+	int cp = 2; 
+	int qtdPrioridade = 0; 
+	int qtdNormal = 0; 
     do{
         desenhaJanela();
         dicaDeTela("Digite um numero correspondente a opcao desejada ou 0 (ZERO) para SAIR");
@@ -64,8 +70,16 @@ void MenuGsenha(){
                 SelecionarMenuPrincipal();
                 break;
             case 1:
+                system("cls");
+                sleep(2);
+                gerarSenha(&senhas, qtdNormal, qtdPrioridade,0);
+                qtdNormal++;
                 break;
             case 2:
+                system("cls");
+                sleep(2);
+                gerarSenha(&senhas, qtdNormal, qtdPrioridade, 1);
+                qtdPrioridade++;
                 break;
             case 3:
                 break;

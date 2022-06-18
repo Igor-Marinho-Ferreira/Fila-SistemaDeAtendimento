@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "menus.h"
 #include "design.h"
+#include "gerador.h"
 
 int main(){
     ajustaJanela();
