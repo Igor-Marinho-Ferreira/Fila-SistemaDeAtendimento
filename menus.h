@@ -73,6 +73,7 @@ void MenuGsenha(){
                 sleep(2);
                 gerarSenha(&senhas, qtdNormal, qtdPrioridade,0);
                 qtdNormal++;
+                break;
             case 2:
                 system("cls");
                 system("pause");
