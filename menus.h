@@ -22,7 +22,7 @@ void SelecionarMenuPrincipal(){
         gotoxy(26,9);
         printf("3 - Chamar senha");
         gotoxy(26,10);
-        printf("4 - Senhas geradas");
+        printf("4 - Senhas em espera");
         gotoxy(26,11);
         printf("0 - Sair");
         gotoxy(24,20);
@@ -58,7 +58,6 @@ void SelecionarMenuPrincipal(){
             case 4:
                 system("cls");
                 listarSenhas(senhas);
-                sleep(1);
                 system("pause");
                 system("cls");
         }        
